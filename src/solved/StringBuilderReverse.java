@@ -1,7 +1,7 @@
 package solved;
 import java.util.Arrays;
 
-public class StringBuilder_ {
+public class StringBuilderReverse {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

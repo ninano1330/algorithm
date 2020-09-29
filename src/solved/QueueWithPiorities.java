@@ -1,70 +1,61 @@
-package solving;
+package solved;
 
 import java.util.LinkedList;
-import java.util.List;
+import java.util.Queue;
 
-public class Test {
+public class QueueWithPiorities {
 	public static void main(String[] args) {
-		int[] priorities = {2,1,3,2};
-		int location = 1;
-		
-		
-		List list = new LinkedList<Integer>();
-		
-		list.add(1);
-		list.add(2);
-		list.add(3);
-		list.add(4);
-		
-		System.out.println("size : " + list.size());
-		System.out.println(list.get(1));
-		
-		list.remove(2);
-		
-		System.out.println("size : " + list.size());
-		
-		System.out.println(list.get(0));
-		System.out.println(list.get(1));
-		System.out.println(list.get(2));
-		
-		
+//		int[] priorities = {2,1,3,2};
+//		int location = 2;
+//		int[] priorities = {1,1,9,1,1,1};
+//		int location = 0;
+		int[] priorities = {1,2,3,4,5};
+		int location = 2;
+
 //		solution(priorities, location);
+		
+		System.out.println("return is " + solution(priorities, location));
 	}
 	
     public static int solution(int[] priorities, int location) {
         int answer = 0;
 
-        List<Integer> prioritiesList = new LinkedList<Integer>();
+        Queue<Integer> que = new LinkedList<Integer>();
         
-        for(int i=0; i<priorities.length; i++) {
-        	prioritiesList.add(priorities[i]);
-        	System.out.println(prioritiesList.get(i));
+        for(int i=0; i < priorities.length; i++) {
+        	que.offer(priorities[i]);
         }
         
-        int max = 0;
-        List<Integer> locationList = new LinkedList<Integer>();
-        
-        while(!prioritiesList.isEmpty()) {
-        	for(int i=0; i<prioritiesList.size(); i++) {
-        		max = prioritiesList.get(i);
-        		for(int j=i+1; j<prioritiesList.size(); j++) {
-        			if(prioritiesList.get(i) < prioritiesList.get(j)) {
-        				max = prioritiesList.get(j);
-        			}
+        int idx =0;
+        int rank = 0;
+        int[] result = new int[priorities.length];
+        for(int priority=9; priority>=1; priority--) {
+        	while(que.contains(priority)) {
+        		if(idx>= priorities.length) {
+        			idx =0;
         		}
-        		if(max == prioritiesList.get(i)) {
-        			//locationList.add(prioritiesList.get(i));
-        			locationList.add(i);
-        			prioritiesList.remove(i);
-        		}
+        		if(que.peek() != priority) {
+        			que.offer(que.poll());
+        			++idx;
+            	}else if(que.peek() == priority){
+            		que.poll();
+            		que.offer(0);
+            		++rank;
+            		result[idx] = rank;
+            		++idx;
+            	}
+
         	}
+        	
         }
         
-        for(int i=0; i<locationList.size(); i++) {
-        	System.out.println(locationList.get(i));
-        }
+//        for(int i=0; i < result.length; i++) {
+//        	System.out.print(result[i]);
+//        }
         
-        return answer;
+//        System.out.println(result[2] + );
+        
+        return result[location];
     }
 }
 

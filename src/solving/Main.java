@@ -1,14 +1,45 @@
 package solving;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		StringBuilder sb = new StringBuilder();
 		
 		int pepCount = sc.nextInt();
 		int idx = sc.nextInt();
-
+//		int pepCount = 7;
+//		int idx = 3;
+		
+		Queue<Integer> que = new LinkedList<Integer>();
+		
+		for(int i=1; i<=pepCount; i++) {
+			que.offer(i);
+		}
+		
+		sb.append("<");
+		while(!que.isEmpty()) {
+			int tmp = 0;
+			for(int i=1; i< idx; i++) {
+				tmp = que.poll();
+				que.offer(tmp);
+			}
+			tmp = que.poll();
+//			if(que.isEmpty()) {
+//				sb.append(tmp);
+//				break;
+//			}
+//			
+			sb.append(tmp + ", ");
+//			System.out.println(tmp);
+//			System.out.println(que);
+		}
+		
+		System.out.println(sb.toString().substring(0,sb.toString().length()-2) + ">");
+		
 		
 	}
 }
