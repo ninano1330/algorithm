@@ -14,6 +14,11 @@ public class Comparator_ {
 //		int n = 2;
 		
 		solution(strings, n);
+		String[] result = solution(strings, n);
+		
+		for(String str : result) {
+			System.out.println(str);
+		}
 	}
 	
 	public static String[] solution(String[] strings, int n) {
@@ -29,8 +34,17 @@ public class Comparator_ {
 				char c2 = s2.charAt(n);
 				
 				if( c1 == c2) {
+					/*
+					 * compareTo
+					 * 2개 값을 비교하고 int형 값을 반환하는 메소드
+					 * A와 B가 같으면 0 반환
+					 * A가 B보다 크면 양수 반환
+					 * A가 B보다 크면 음수 반환
+					 */
 					return s1.compareTo(s2);
 				}else return c1 - c2;
+				
+				
 			}
 			
 		});

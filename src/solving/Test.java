@@ -4,46 +4,46 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Test {
-
 	public static void main(String[] args) {
-		int bridge_length = 2;
-		int weight = 10;
-		int[] truck_weights = {7,4,5,6};
+//		String number = "1924"; int k = 2;
+//		String number = "1231234"; int k = 3;
+		String number = "4177252841"; int k = 4;
 		
-		solution(bridge_length, weight, truck_weights);
-
+		System.out.println("result : " + solution(number, k));
+		
+//		StringBuilder sb = new StringBuilder(number);
+		
 	}
 	
-	public static int solution(int bridge_length, int weight, int[] truck_weights) {
-		Queue<Integer> que = new LinkedList<Integer>();
-		int sec = 0;
-		int sum = 0;
-		
-//		for(int t : truck_weights) {
-//			que.offer(t);
-//			System.out.println(que.size());
-//		}
-		
-		for(int truck_weight : truck_weights) {
-			while(true) {
-				if(que.isEmpty()) {
-					que.offer(truck_weight);
-					sum += truck_weight;
-					sec++;
-					break;
-				}else if(que.size() == bridge_length) {
-					sum -= que.poll(); //다리에 가능한 트럭이 모두 올라올 시 (다리 길이가 que size와 같을 시)
-				}else {
-					if( sum +truck_weight > weight) {
-						
-					}
-				}
-			}
-		}
-		
-		
-		
-        int answer = 0;
-        return answer;
-    }
+	 public static String solution(String number, int k) {
+		 StringBuilder sb = new StringBuilder(number);
+		 
+		 while(sb.length()!=0) {
+			 
+		 }
+		 
+		 return sb.toString();
+	 }
+
 }
+
+
+/*
+큰 수 만들기
+문제 설명
+어떤 숫자에서 k개의 수를 제거했을 때 얻을 수 있는 가장 큰 숫자를 구하려 합니다.
+
+예를 들어, 숫자 1924에서 수 두 개를 제거하면 [19, 12, 14, 92, 94, 24] 를 만들 수 있습니다. 이 중 가장 큰 숫자는 94 입니다.
+
+문자열 형식으로 숫자 number와 제거할 수의 개수 k가 solution 함수의 매개변수로 주어집니다. number에서 k 개의 수를 제거했을 때 만들 수 있는 수 중 가장 큰 숫자를 문자열 형태로 return 하도록 solution 함수를 완성하세요.
+
+제한 조건
+number는 1자리 이상, 1,000,000자리 이하인 숫자입니다.
+k는 1 이상 number의 자릿수 미만인 자연수입니다.
+입출력 예
+number	k	return
+1924	2	94
+1231234	3	3234
+4177252841	4	775841
+출처
+*/

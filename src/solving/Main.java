@@ -1,66 +1,90 @@
 package solving;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
 
 public class Main {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		StringBuilder sb = new StringBuilder();
+	static int n; // 노드 갯수
+	static int m; // 간선 갯수
+
+	public static void main(String[] args) throws IOException {
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+
+		n = Integer.parseInt(st.nextToken()); //노드 갯수
+		m = Integer.parseInt(st.nextToken()); //간선 갯수
 		
-		int pepCount = sc.nextInt();
-		int idx = sc.nextInt();
-//		int pepCount = 7;
-//		int idx = 3;
+		List<List<Integer>> list = new ArrayList<List<Integer>>();
+		int[] indegree = new int[n+1];
 		
-		Queue<Integer> que = new LinkedList<Integer>();
-		
-		for(int i=1; i<=pepCount; i++) {
-			que.offer(i);
+		//세팅
+		for(int i=0; i<n+1; i++) { //노드 갯수
+			list.add(new ArrayList<Integer>()); //list 안의 리스트에 ArrayList<Integer> 선언
 		}
 		
-		sb.append("<");
-		while(!que.isEmpty()) {
-			int tmp = 0;
-			for(int i=1; i< idx; i++) {
-				tmp = que.poll();
-				que.offer(tmp);
-			}
-			tmp = que.poll();
-//			if(que.isEmpty()) {
-//				sb.append(tmp);
-//				break;
-//			}
+		for(int i=0; i<m; i++) { //간선 갯수
+			st = new StringTokenizer(br.readLine()); 
+			
+			int v1 = Integer.parseInt(st.nextToken()); //간선 정보 
+			int v2 = Integer.parseInt(st.nextToken()); //간선 정보
+			
+			list.get(v1).add(v2);
+			indegree[v2]++;
+		}
+
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		Scanner scanner = new Scanner(System.in);
+//		List<int[][]> list = new LinkedList<int[][]>();
+//		
+//		int count = scanner.nextInt();
+//		int infor = scanner.nextInt();
+//
+//		while(infor != 0) {
+//			String a = br.readLine();
+//			String[] b = a.split(" ");
 //			
-			sb.append(tmp + ", ");
-//			System.out.println(tmp);
-//			System.out.println(que);
-		}
-		
-		System.out.println(sb.toString().substring(0,sb.toString().length()-2) + ">");
-		
-		
+//			int[][] c = {{Integer.parseInt(b[0]), Integer.parseInt(b[1])}};
+////			System.out.println(c[0][0]);
+////			System.out.println(c[0][1]);
+//			list.add(c);
+//			
+//			infor--;
+//		}
+//		
+//
+//		
+////		int[][] test = {{4,2}};
+////		int[][] test2 = {{3,1}};
+////		
+////		list.add(test);
+////		list.add(test2);
+//		
+//		list.sort(new Comparator<int[][]>() {
+//			@Override
+//			public int compare(int[][] a, int[][] b) {
+//				if(a[0][0] < b[0][0]) {
+//					return -1;
+//				}else if ( a[0][0] > b[0][0]) {
+//					return 1;
+//				}else return 0;
+//			}
+//		});
+////		StringBuilder sb = new StringBuilder();
+//		
+//		for(int i=0; i<list.size();i++) {
+//			int[][] tmp= list.get(i);
+////			sb.append(tmp[0][0] + " " + tmp[0][1] + " ");
+//			System.out.print(tmp[0][0]);;
+//			System.out.print(" ");
+//			System.out.print(tmp[0][1]);
+//			System.out.print(" ");
+//		}
+//		
+////		System.out.println(sb.toString().substring(0,sb.toString().length()-1));
 	}
 }
-
-/*
- *
-문제
-요세푸스 문제는 다음과 같다.
-
-1번부터 N번까지 N명의 사람이 원을 이루면서 앉아있고, 양의 정수 K(≤ N)가 주어진다. 이제 순서대로 K번째 사람을 제거한다. 한 사람이 제거되면 남은 사람들로 이루어진 원을 따라 이 과정을 계속해 나간다. 이 과정은 N명의 사람이 모두 제거될 때까지 계속된다. 원에서 사람들이 제거되는 순서를 (N, K)-요세푸스 순열이라고 한다. 예를 들어 (7, 3)-요세푸스 순열은 <3, 6, 2, 7, 5, 1, 4>이다.
-
-N과 K가 주어지면 (N, K)-요세푸스 순열을 구하는 프로그램을 작성하시오.
-
-입력
-첫째 줄에 N과 K가 빈 칸을 사이에 두고 순서대로 주어진다. (1 ≤ K ≤ N ≤ 5,000)
-
-출력
-예제와 같이 요세푸스 순열을 출력한다.
-
-예제 입력 1 
-7 3
-예제 출력 1 
-<3, 6, 2, 7, 5, 1, 4>
-*/
