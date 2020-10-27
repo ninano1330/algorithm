@@ -1,10 +1,7 @@
 package solving;
 
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Set;
 
 public class Test3 {
@@ -17,13 +14,6 @@ public class Test3 {
 	}
 
 	public static int solution(String skill, String[] skill_trees) {
-		
-		
-//		Queue<Character> que = new LinkedList<Character>();
-//		for(int i=0; i < skill.length(); i++) {
-//			que.offer(skill.charAt(i));
-//		}
-		
 		Set<Character> set = new LinkedHashSet<Character>();
 		for(int i=0; i < skill.length(); i++) {
 			set.add(skill.charAt(i));
