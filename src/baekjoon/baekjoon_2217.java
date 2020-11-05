@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Main {
+public class baekjoon_2217 {
 	public static void main(String[] args) throws IOException {
 		//Scanner scanner = new Scanner(System.in);
 		
