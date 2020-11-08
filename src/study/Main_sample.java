@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class Main_sample {
+public class Main_Sample {
 	public static void main(String[] args) throws IOException {
 		//Scanner scanner = new Scanner(System.in);
 		

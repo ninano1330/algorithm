@@ -5,10 +5,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.LinkedList;
 
 public class test1 {
 
 	public static void main(String[] args) throws ParseException {
+		String a = "";
+		List list = new LinkedList<>()
+		
 		int n = 3;
 		String[] customers = {"10/01 23:20:25 30"
 				, "10/01 23:25:50 26"
