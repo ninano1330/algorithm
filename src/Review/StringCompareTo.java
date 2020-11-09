@@ -33,7 +33,10 @@ public class StringCompareTo {
 		});
 		System.out.println(String.join(",", d));
 		
-		
+	
+		String tt = "1";
+		char cc = tt.charAt(0);
+		System.out.println((int)(cc-'0'));
 	}
 	
     public static String solution(int[] numbers) {

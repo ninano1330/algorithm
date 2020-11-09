@@ -38,16 +38,7 @@ public class TopologicalSorting {
 			indegree[v2]++;
 		}
 		
-//		for(int i=0; i<indegree.length; i++) {
-//			System.out.println("indegree[" + i + "] : " + indegree[i]);
-//		}
-//		
-//		for(int i=0; i<list.size(); i++) {
-//			for(int j=0; j<list.get(i).size(); j++) {
-//				System.out.println("list idx : " + i + " " + j);
-//				System.out.println(list.get(i).get(j));
-//			}
-//		}
+
 		
 		//문제 번호가 작은 것부터 풀어야하므로, 오름차순인 PriorityQueue 사용
 		PriorityQueue<Integer> que = new PriorityQueue<Integer>();
