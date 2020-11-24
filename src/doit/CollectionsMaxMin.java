@@ -3,7 +3,7 @@ package doit;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Test {
+public class CollectionsMaxMin {
 
 	public static void main(String[] args) {
 		int a = 10; int b = 30; int c = 20;
