@@ -1,5 +1,7 @@
 package doit;
 
+import java.util.Arrays;
+
 public class BinSearch {
 
 	public static void main(String[] args) {
@@ -7,6 +9,8 @@ public class BinSearch {
 		
 		int n = 582958;
 		
+		
+		System.out.println(Arrays.binarySearch(numArr, n));
 		System.out.println(binSearch(numArr, n));
 	}
 	
