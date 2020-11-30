@@ -25,16 +25,6 @@ public class PhyExamSearch {
 			}
 		};
 		
-//		public static final Comparator<PhyscData> HEIGHT_ORDER = new HeightOrderComparator();
-		
-//		private static class HeightOrderComparator implements Comparator<PhyscData>{
-//
-//			@Override
-//			public int compare(PhyscData o1, PhyscData o2) {
-//				return (o1.height > o2.height) ? 1 : (o1.height < o2.height) ? -1 : 0;
-//			}
-//			
-//		}
 	}
 	
 	

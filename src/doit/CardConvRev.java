@@ -6,11 +6,6 @@ public class CardConvRev {
 	static ArrayList<Integer> al;
 	
 	public static void main(String args[]) {
-		
-		
-		
-		
-		
 		int n = 10;
 		al = new ArrayList<Integer>();
 		//num2(10);

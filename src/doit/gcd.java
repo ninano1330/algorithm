@@ -3,7 +3,7 @@ package doit;
 public class gcd {
 	public static void main(String[] args) {
 		int a = 36;
-		int b = 60;
+		int b = 51;
 		
 		System.out.println(a>= b ? gcd(a,b) : gcd(b,a));
 	}
@@ -14,5 +14,17 @@ public class gcd {
 		}
 		
 		return gcd(b,a%b);
+	}
+	
+	static int gcd2(int a, int b) {
+		while(b!=0) {
+			int tmp = a%b;
+			
+			a = b;
+			b = tmp;
+		}
+		
+		return a;
+		
 	}
 }
