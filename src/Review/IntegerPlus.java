@@ -17,7 +17,10 @@ public class IntegerPlus {
 	        
 	        for(int i=0; i < s.length() ; i++) {
 	        	//answer += Integer.parseInt(Character.toString(s.charAt(i)));
-	        	answer += Integer.parseInt(String.valueOf(s.charAt(i)));
+	        	//answer += Integer.parseInt(String.valueOf(s.charAt(i)));
+	        	
+	        	//answer += Character.getNumericValue(s.charAt(i));
+	        	answer += (int)s.charAt(i) -'0';
 	        }
 
 	        return answer;

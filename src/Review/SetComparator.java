@@ -40,10 +40,6 @@ public class SetComparator {
 			}
 		});
 
-		
-//		for(int i=0; i<count; i++) {
-//			strArr[i] = br.readLine();
-//		}
 		for (int i = 0; i < count; i++) {
 			strSet.add(br.readLine());
 		}

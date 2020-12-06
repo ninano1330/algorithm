@@ -78,25 +78,4 @@ public class Greed_meeting {
 		
 		System.out.println(result);
 	}
-
-	
-//	Arrays.sort(arr,(o1,o2)->{
-//
-//		//종료시간이 같다면
-//
-//		  if(o1[1] == o2[1]){
-//
-//		//시작시간 순으로
-//
-//		    return Integer.compare(o1[0],o2[0]);
-//
-//		   }else{
-//
-//		//같지 않으면 종료시간 순으로
-//
-//		    retrun Integer.compare(o1[1],o2[1]);
-//
-//		   }
-//
-//		}); 
 }

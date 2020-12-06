@@ -1,25 +1,10 @@
 package doit;
 
-public class sum {
+public class Sum {
 
 	public static void main(String[] args) {
 		int n = 10;
-		System.out.println(sum(n));
-		
-		do {
-			n--;
-			System.out.println("n = " + n);
-		}while(n>0);
-		
-		
-		FieldTest test = new FieldTest();
-		System.out.println(test.getA());
-		
-		
-		int[] a = new int[] {1,2,3,4,5};
-		int[] b = a.clone();
-		
-		
+		System.out.println(sum(n));		
 	}
 	
 	public static int sum(int n) {
