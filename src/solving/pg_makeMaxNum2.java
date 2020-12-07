@@ -1,7 +1,7 @@
 package solving;
 
 
-public class pg_makeMaxNum {
+public class pg_makeMaxNum2 {
 	public static void main(String[] args) {
 //		String number = "1924"; int k = 2;
 //		String number = "1231234"; int k = 3;
@@ -14,27 +14,18 @@ public class pg_makeMaxNum {
 	
 	
 	 public static String solution(String number, int k) {
-		StringBuilder sb = new StringBuilder(number);
+		StringBuilder sb = new StringBuilder();
+		int cnt = number.length() - k;
 		
-
-			for(int i=0; i<sb.length()-1;) {
-				if(k>0) {
-					if(sb.charAt(i) < sb.charAt(i+1)) {
-						//System.out.println(sb.charAt(i));
-						//System.out.println(i);
-						sb.deleteCharAt(i);
-						//System.out.println("delete result : " + sb.toString());
-						i= 0;
-						k--;
-						continue;
-					}
-				}else if(k==0){
-					//System.out.println(sb.toString());
-					//System.out.println("hi");
-					 return sb.toString();
-				}
+		for(int i=0; i<cnt;) {
+			for(int j=0; j<number.length()-1; j++) {
 				
-				i++;
+			}
+		}
+
+		
+			for(int i=0; i<sb.length()-1;) {
+				
 			}
 			
 		
