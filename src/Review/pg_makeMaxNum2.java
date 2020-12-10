@@ -1,4 +1,4 @@
-package solving;
+package review;
 
 
 public class pg_makeMaxNum2 {
@@ -15,27 +15,29 @@ public class pg_makeMaxNum2 {
 	
 	 public static String solution(String number, int k) {
 		StringBuilder sb = new StringBuilder();
-		int cnt = number.length() - k;
 		
-		for(int i=0; i<cnt;) {
-			for(int j=0; j<number.length()-1; j++) {
-				
-			}
-		}
-
+		int len = number.length();
+		int cnt = len - k;
+		int maxIdx = 0;
 		
-			for(int i=0; i<sb.length()-1;) {
-				
+		while(cnt > 0) {
+			char maxNum = '0';
+			for(int i=maxIdx; i<= len-cnt && maxNum!='9'; i++) {
+				char num = number.charAt(i);
+				if(num > maxNum) {
+					maxNum = num;
+					maxIdx = i;
+				}
 			}
 			
+			sb.append(maxNum);
+			maxIdx++;
+			cnt--;
+			
+			//System.out.println("maxIdx : " + maxIdx);
+		}
 		
-			while(k!=0) {
-				sb.deleteCharAt(sb.length()-1);
-				k--;
-			}
-		
-		 
-			return sb.toString();
+		return sb.toString();
 	 }
 
 }

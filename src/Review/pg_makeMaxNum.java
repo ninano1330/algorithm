@@ -1,4 +1,4 @@
-package solving;
+package review;
 
 
 public class pg_makeMaxNum {
