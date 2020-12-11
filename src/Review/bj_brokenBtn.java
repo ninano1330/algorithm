@@ -1,9 +1,11 @@
 package review;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class bj_1107_2 {
+/*
+ * 백준 1107
+ */
+public class bj_brokenBtn {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		

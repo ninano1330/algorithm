@@ -16,19 +16,21 @@ public class pg_makeMaxNum2 {
 	 public static String solution(String number, int k) {
 		StringBuilder sb = new StringBuilder();
 		
-		int len = number.length();
-		int cnt = len - k;
-		int maxIdx = 0;
+		int len = number.length(); //10
+		int cnt = len - k;	// 10 - 4 = 6;
+		int maxIdx = 0;		
 		
 		while(cnt > 0) {
 			char maxNum = '0';
 			for(int i=maxIdx; i<= len-cnt && maxNum!='9'; i++) {
-				char num = number.charAt(i);
+				char num = number.charAt(i);	
 				if(num > maxNum) {
 					maxNum = num;
 					maxIdx = i;
 				}
 			}
+			
+			System.out.println(maxNum);
 			
 			sb.append(maxNum);
 			maxIdx++;
